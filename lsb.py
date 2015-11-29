@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+
+# @author: Jose Eduardo Ramirez Magana
 from PIL import Image
 import argparse
 class LSB:
@@ -45,11 +47,9 @@ class LSB:
   def set_lsb(self, new_pixel, x, y):
     i = 0
     current_pixel = list(self.pixels[x, y])
-    print current_pixel, new_pixel, x, y
     for channel in new_pixel:
       current_pixel[i] = (current_pixel[i] & ~1) | channel
       i += 1
-    print tuple(current_pixel)
     self.pixels[x, y] = tuple(current_pixel)
        
   # convierte una lista de enteros a un entero
@@ -71,7 +71,7 @@ class LSB:
         self.set_lsb(char[pix:pix+3], i, j)
         j += 1
       i += 1 
-    return self.image.save('new.bmp', 'BMP')
+    self.image.save('escondido.bmp', 'BMP')
           
 
 
@@ -93,4 +93,5 @@ if args.operacion == 'r':
   print lsb.get_message()
 elif args.operacion == 'w':
   lsb.transform_message(args.mensaje)
-  print lsb.write_message()
+  lsb.write_message()
+  print 'Mensaje guardado en archivo escondido.bmp'
