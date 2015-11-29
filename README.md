@@ -30,13 +30,14 @@ El programa recibe tres parametros:
 
 ## Uso
 Leer contenido de un archivo
-python lsb.py --imagen=imagen.jpg --operacion=r
+```python lsb.py --imagen=imagen.jpg --operacion=r```
 
 Esconder mensaje en un archivo
-python lsb.py --imagen=imagen.jpg --operacion=w --mensaje="MENSAJE OCULTO"
+```python lsb.py --imagen=imagen.jpg --operacion=w --mensaje="MENSAJE OCULTO"```
 
 Leer contenido de un archivo con mensaje oculto
-python lsb.py --imagen=escondido.bmp --operacion=r
+```python lsb.py --imagen=escondido.bmp --operacion=r```
 
 El programa crea una nueva imagen de tipo BMP llamada escondido.bmp, en donde
 se ocultara el mensaje configurado previamente.
+
